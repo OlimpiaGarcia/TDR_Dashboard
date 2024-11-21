@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.main-layout {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    background-color: #f8f9fa;
+    padding: 20px;
+    width: 20%;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-link {
+    display: block;
+    margin: 10px 0;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sidebar-link:hover {
+    color: #007bff;
+}
+
+
+.content {
+    margin-top: 120px; /* Deja espacio para la barra superior */
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #ffffff;
+    height: calc(100vh - 85px); /* Resta la altura de la barra superior */
+}
+    
+
+.page-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.box {
+    background: #f1f1f1;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Barra superior */
+.topbar {
+    height: 85px;
+    display: flex;
+    justify-content: space-between; /* Espaciado entre los elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    background-color: #f8f9fa; /* Color de fondo */
+    padding: 10px 20px; /* Espaciado interno */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para un diseño elegante */
+    font-family: Arial, sans-serif; /* Fuente */
+    position: absolute; /* Fija la barra en la parte superior */
+    top: 0; /* Sin margen superior */
+    width: 100%; /* Ocupa todo el ancho de la ventana */
+
+}
+
+/* Estilo del texto a la izquierda */
+.topbar-left {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333; /* Color del texto */
+}
+
+/* Estilo del texto a la derecha */
+.topbar-right {
+    font-size: 16px;
+    font-weight: normal;
+    color: #555; /* Color del texto */
+}
