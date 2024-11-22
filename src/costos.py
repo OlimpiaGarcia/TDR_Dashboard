@@ -1,8 +1,6 @@
 from dash import html
-
-
-
-
+import pandas as pd
+import plotly.express as px
 
 # Página de costos
 costos_page = html.Div(
