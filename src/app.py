@@ -9,6 +9,9 @@ from predictivos import predictivos_page
 from metricas import metricas_page 
 from estadisticas import estadisticas_page
 
+# Cargamos los datos
+
+
 
 '''Inicializamos la aplicacion'''
 app = Dash(__name__, suppress_callback_exceptions=True)

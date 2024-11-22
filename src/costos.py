@@ -1,5 +1,9 @@
 from dash import html
 
+
+
+
+
 # Página de costos
 costos_page = html.Div(
     [
