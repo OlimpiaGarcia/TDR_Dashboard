@@ -3,7 +3,7 @@ import plotly.express as px
 import pandas as pd
 from topbar import topbar
 from sidebar import sidebar
-from main import main_page
+from dashboard import main_page
 from costos import costos_page
 from predictivos import predictivos_page
 from metricas import metricas_page 
@@ -41,6 +41,8 @@ def update_top_bar(pathname):
         return "Estadísticas"
     elif pathname == "/home":
         return "Dashboard"
+    elif pathname == "/":
+        return "Dashboard"
     else:
         return "Error, página no encontrada"
 
@@ -52,13 +54,13 @@ def update_top_bar(pathname):
 
 def display_page(pathname):
     if pathname == "/costos":
-        return costos_page
+        return html.Div([topbar, costos_page], className="page-layout")
     elif pathname == "/predictivos":
-        return predictivos_page
+        return html.Div([topbar, predictivos_page], className="page-layout") 
     elif pathname == "/metricas":
-        return metricas_page
+        return html.Div([topbar, metricas_page], className="page-layout")
     elif pathname == "/estadisticas":
-        return estadisticas_page
+        return html.Div([topbar, estadisticas_page], className="page-layout")
     elif pathname == "/home":
         return html.Div([topbar, main_page], className="page-layout")
     else:
