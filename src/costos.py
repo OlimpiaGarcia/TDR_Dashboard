@@ -24,25 +24,25 @@ costos_page = html.Div(
         html.Div(className="graph", children=[
             dcc.Graph(id='graph3', figure=fig)  
         ]),
-    ], style={'display': 'flex', 'justify-content': 'space-around', 'margin': '10px 0'}),
+        ], style={'display': 'flex', 'justify-content': 'space-around', 'margin': '10px 0'}),
 
-    html.Div([
-        # Segunda fila de boxes
-        html.Div(className="graph", children=[
-            dcc.Graph(id='graph4', figure=fig)  
-        ]),
-        html.Div(className="graph", children=[
-            dcc.Graph(id='graph5', figure=fig)  
-        ]),
-    ], style={'display': 'flex', 'justify-content': 'space-around', 'margin': '10px 0'}),
+        html.Div([
+            # Segunda fila de boxes
+            html.Div(className="graph", children=[
+                dcc.Graph(id='graph4', figure=fig)  
+            ]),
+            html.Div(className="graph", children=[
+                dcc.Graph(id='graph5', figure=fig)  
+            ]),
+        ], style={'display': 'flex', 'justify-content': 'space-around', 'margin': '10px 0'}),
 
-    html.Div([
-        # Primer fila de boxes
-        html.Div(className="graph", children=[
-            dcc.Graph(id='graph6', figure=fig)
-        ]),
-        
-    ], style={'display': 'flex', 'justify-content': 'space-around', 'margin': '10px 0'}),
+        html.Div([
+            # Primer fila de boxes
+            html.Div(className="graph", children=[
+                dcc.Graph(id='graph6', figure=fig)
+            ]),
+            
+        ], style={'display': 'flex', 'justify-content': 'space-around', 'margin': '10px 0'}),
 
     ]
 )
