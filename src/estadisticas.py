@@ -55,10 +55,21 @@ filtered_data_complete = filtered_data_complete.loc[~filtered_data_complete.inde
 
 # Select only the columns corresponding to the top 15 units for plotting
 filtered_data_final = filtered_data_complete[top_units.index]
-print(filtered_data_final)
 
 # Convertir datos de formato ancho a largo para usar con Plotly Express
+filtered_data_final.reset_index(inplace=True)  # Restablecer índice para manejar columnas adecuadamente
+filtered_data_long = filtered_data_final.reset_index().melt(
+    id_vars='jobcode',  
+    var_name='Unidad',
+    value_name='Count of Job Codes'
+)
 
+#   Data 5 ''   
+# Filter the dataframe to include only the top 15 units and their Kilometraje
+top_units_kilometraje = circuitos[circuitos['Unidad'].isin(top_units.index)][['Unidad', 'Kilometraje']]
+
+#Dropping NaN values as Kilometraje might contain missing values
+top_units_kilometraje = top_units_kilometraje.dropna()
 
 
 
@@ -136,10 +147,10 @@ fig3.update_xaxes(tickangle=45)
 
 # Crear el gráfico de barras apiladas con Plotly
 fig4 = px.bar(
-    filtered_data_final,
+    filtered_data_long,
     x='Unidad',
     y='Count of Job Codes',
-    color='jobcode',  # Usa 'jobcode' como la dimensión de color para apilar las barras
+    color='jobcode',  
     title='Los jobcodes más repetidos en las 15 unidades',
     labels={'Count of Job Codes': 'Cantidad de Job Codes', 'Unidad': 'ID de Unidad', 'jobcode': 'Código de Trabajo'}
 )
@@ -159,6 +170,40 @@ fig4.update_layout(
 
 # Mejorar la legibilidad de las etiquetas en el eje X
 fig4.update_xaxes(tickangle=45)
+
+#   Gragfico 5 ''Top 15 Units by Kilometraje'
+# Crear el boxplot interactivo con Plotly
+fig5 = px.box(
+    top_units_kilometraje,
+    x='Unidad',
+    y='Kilometraje',
+    title='Distribución de las 15 unidades con más kilometraje',
+    labels={'Unidad': 'ID de Unidad', 'Kilometraje': 'Kilometraje (km)'},
+)
+
+# Mejorar el diseño
+fig5.update_layout(
+    xaxis_title='ID de Unidad',
+    yaxis_title='Kilometraje (km)',
+    xaxis=dict(
+        tickmode='array',
+        tickvals=[1821, 1769, 1732, 1878, 1850, 1829, 1745, 1855, 1825, 1887, 1869, 1865, 1849, 1828, 1879 ],  # Valores específicos donde quieres ticks
+        ticktext=['1821', '1769', '1732', '1878', '1850', '1829', '1745', '1855', '1825','1887', '1869', '1865', '1849', '1828', '1879']  # Texto específico para cada tick
+    ),
+    title=dict(x=0.5),  # Centrar el título
+)
+
+# Añadir una anotación para explicar posibles valores ausentes
+fig5.add_annotation(
+    x=0.5, y=-0.15,  # Posición relativa
+    xref='paper', yref='paper',
+    text="Nota: Algunas unidades pueden no estar presentes debido a valores de kilometraje faltantes.",
+    showarrow=False,
+    font=dict(size=12, color="gray")
+)
+
+
+
 
 # grafico demo
 fig = px.bar(unidades, x=unidades.index, y=unidades.values, title="Unidades por Tipo")
@@ -210,7 +255,7 @@ estadisticas_page = html.Div([
             dcc.Graph(id='graph4', figure=fig4)  
         ]),
         html.Div(className="graph", children=[
-            dcc.Graph(id='graph5', figure=fig)  
+            dcc.Graph(id='graph5', figure=fig5)  
         ]),
     ], style={'display': 'flex', 'justify-content': 'space-around', 'margin': '10px 0'}),
     
