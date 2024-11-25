@@ -99,3 +99,12 @@ body {
     font-weight: normal;
     color: #555; /* Color del texto */
 }
+
+.palette{
+    --yale-blue: #0e3372ff;
+    --powder-blue: #b6c7e5ff;
+    --dark-orange-web: #f68d2bff;
+    --hunyadi-yellow: #f3b036ff;
+    --peach-yellow: #fbe1b0ff;
+    --white: #ffffffff;
+}
