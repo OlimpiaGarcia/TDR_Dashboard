@@ -1,6 +1,7 @@
-import plotly.express as px
+from imports import sm
 import pandas as pd
 import numpy as np
+
 
 # Cargamos los datos
 def load_data():
@@ -143,3 +144,14 @@ regresion_limpio_trailer = regresion_limpio[regresion_limpio['TipoUnidad'] == 'T
 correct_data = regresion_limpio.copy()
 selected_features = correct_data[['MTBF', 'MTTR', 'Downtime', 'lagdias', 'No.incidentes']].copy()
 selected_features = selected_features.dropna()
+
+'''insights data'''
+# Prepare the independent variables (MTBF, MTTR, Downtime) for a multiple linear regression
+X_multiple = clean_data_subtotal[['MTBF', 'MTTR', 'Downtime']]
+X_multiple = sm.add_constant(X_multiple)
+
+# Dependent variable (Subtotal cost)
+y_subtotal_cost_multiple = clean_data_subtotal['SUBTOTAL']
+
+# Perform the multiple linear regression
+model_multiple = sm.OLS(y_subtotal_cost_multiple, X_multiple).fit()
