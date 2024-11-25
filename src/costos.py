@@ -9,6 +9,19 @@ circuitos = load_data()
 # Obtiene las unidades agrupadas y cuenta por tipo de unidad
 unidades = get_unidades(circuitos)
 
+'''data'''
+''#Data 1''
+
+
+'''graficos'''
+''# Gragfico 1 ''
+
+
+
+''# Gragfico 2 ''
+
+
+
 # grafico demo
 fig = px.bar(unidades, x=unidades.index, y=unidades.values, title="Unidades por Tipo")
 
@@ -19,7 +32,7 @@ costos_page = html.Div(
         html.Div([
         # Primer fila de boxes
         html.Div(className="graph", children=[
-            dcc.Graph(id='graph2', figure=fig)
+            dcc.Graph(id='graph', figure=fig)
         ]),
         html.Div(className="graph", children=[
             dcc.Graph(id='graph3', figure=fig)  

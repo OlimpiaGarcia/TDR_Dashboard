@@ -25,19 +25,29 @@ fig = px.bar(unidades, x=unidades.index, y=unidades.values, title="Unidades por 
 # Página de predictivos
 insights_page = html.Div(
     [
-        html.Div(
-           dcc.Markdown(markdown_text),
-        ),
+        html.Div([
+            html.Div(className="text", children=[
+            dcc.Markdown(markdown_text),
+            ]),
+        ]),
 
+        html.Div([
         html.Div(className="graph", children=[
             dcc.Graph(id='graph2', figure=fig)
         ]),
+        html.Div(className="graph", children=[
+            dcc.Graph(id='graph3', figure=fig)  
+        ]),
+        ], style={'display': 'flex', 'justify-content': 'space-around', 'margin': '10px 0'}),
+
 
         html.Div(
             [
-                html.H1("Insights"),
-                html.P("En esta página se presentan los resultados de los análisis realizados."),
-                html.P("Se presentan los resultados de los análisis realizados."),
+                html.Div(className="text", children=[
+                    html.H1("Insights"),
+                    html.P("En esta página se presentan los resultados de los análisis realizados."),
+                    html.P("Se presentan los resultados de los análisis realizados."),                
+                ]), 
             ]
         ),
 
