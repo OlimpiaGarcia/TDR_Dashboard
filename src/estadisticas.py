@@ -20,7 +20,6 @@ fig_pie.update_layout({
 # grafico demo
 fig = px.bar(unidades, x=unidades.index, y=unidades.values, title="Unidades por Tipo")
 
-
 # Página de estadísticas
 estadisticas_page = html.Div([
 
@@ -53,8 +52,9 @@ estadisticas_page = html.Div([
         
     html.Div([
         # Primer fila de boxes
-        html.Div(className="graph", children=[
-            dcc.Graph(id='graph2', figure=fig)
+        html.Div(className="graph",
+                children=[
+                dcc.Graph(id='graph2', figure=fig)
         ]),
         html.Div(className="graph", children=[
             dcc.Graph(id='graph3', figure=fig)  # Cambiado el id a 'graph3' para evitar duplicados

@@ -5,7 +5,7 @@ from topbar import topbar
 from sidebar import sidebar
 from dashboard import main_page
 from costos import costos_page
-from predictivos import predictivos_page
+from insights import insights_page
 from metricas import metricas_page 
 from estadisticas import estadisticas_page
 
@@ -32,8 +32,8 @@ app.layout = html.Div(
 def update_top_bar(pathname):
     if pathname == "/costos":
         return "Costos"
-    elif pathname == "/predictivos":
-        return "Predictivos"
+    elif pathname == "/insights":
+        return "Insights"
     elif pathname == "/metricas":
         return "Métricas"
     elif pathname == "/estadisticas":
@@ -54,8 +54,8 @@ def update_top_bar(pathname):
 def display_page(pathname):
     if pathname == "/costos":
         return html.Div([topbar, costos_page], className="page-layout")
-    elif pathname == "/predictivos":
-        return html.Div([topbar, predictivos_page], className="page-layout") 
+    elif pathname == "/insights":
+        return html.Div([topbar, insights_page], className="page-layout") 
     elif pathname == "/metricas":
         return html.Div([topbar, metricas_page], className="page-layout")
     elif pathname == "/estadisticas":
