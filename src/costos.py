@@ -124,7 +124,8 @@ fig4.update_layout(
     legend_title='Tipo de Unidad',
     title_x=0.5,  # Centrar el título
     xaxis=dict(
-        tickmode = 'linear'  
+        tickmode = 'linear',
+        type='category'  
     ),
     plot_bgcolor='white',  # Fondo blanco para el área de trazado
     paper_bgcolor='white'  # Fondo blanco para todo el gráfico
