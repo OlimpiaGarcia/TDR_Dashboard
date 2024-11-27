@@ -130,7 +130,8 @@ fig3.update_layout(
     xaxis=dict(
         tickmode='array',
         tickvals=[1821, 1769, 1732, 1878, 1850, 1829, 1745, 1855, 1825, 1887, 1869, 1865, 1849, 1828, 1879 ],  # Valores específicos donde quieres ticks
-        ticktext=['1821', '1769', '1732', '1878', '1850', '1829', '1745', '1855', '1825','1887', '1869', '1865', '1849', '1828', '1879']  # Texto específico para cada tick
+        ticktext=['1821', '1769', '1732', '1878', '1850', '1829', '1745', '1855', '1825','1887', '1869', '1865', '1849', '1828', '1879'],  # Texto específico para cada tick
+        type='category'  # Asegúrate de que el eje X esté en modo categórico
     ),
     legend=dict(
         yanchor="top",
@@ -163,7 +164,8 @@ fig4.update_layout(
     xaxis=dict(
         tickmode='array',
         tickvals=[1821, 1769, 1732, 1878, 1850, 1829, 1745, 1855, 1825, 1887, 1869, 1865, 1849, 1828, 1879 ],  # Valores específicos donde quieres ticks
-        ticktext=['1821', '1769', '1732', '1878', '1850', '1829', '1745', '1855', '1825','1887', '1869', '1865', '1849', '1828', '1879']  # Texto específico para cada tick
+        ticktext=['1821', '1769', '1732', '1878', '1850', '1829', '1745', '1855', '1825','1887', '1869', '1865', '1849', '1828', '1879'],  # Texto específico para cada tick
+        type='category'  # Asegúrate de que el eje X esté en modo categórico
     ),
     legend=dict(yanchor="top", y=1.20, xanchor="right", x=1)
 )
@@ -172,7 +174,6 @@ fig4.update_layout(
 fig4.update_xaxes(tickangle=45)
 
 #   Gragfico 5 ''Top 15 Units by Kilometraje'
-# Crear el boxplot interactivo con Plotly
 fig5 = px.box(
     top_units_kilometraje,
     x='Unidad',
@@ -187,23 +188,16 @@ fig5.update_layout(
     yaxis_title='Kilometraje (km)',
     xaxis=dict(
         tickmode='array',
-        tickvals=[1821, 1769, 1732, 1878, 1850, 1829, 1745, 1855, 1825, 1887, 1869, 1865, 1849, 1828, 1879 ],  # Valores específicos donde quieres ticks
-        ticktext=['1821', '1769', '1732', '1878', '1850', '1829', '1745', '1855', '1825','1887', '1869', '1865', '1849', '1828', '1879']  # Texto específico para cada tick
+        tickvals=[1821, 1769, 1732, 1878, 1850, 1829, 1745, 1855, 1825, 1887, 1869, 1865, 1849, 1828, 1879],  # Valores específicos donde quieres ticks
+        ticktext=['1821', '1769', '1732', '1878', '1850', '1829', '1745', '1855', '1825','1887', '1869', '1865', '1849', '1828', '1879'],  # Texto específico para cada tick
+        type='category'  # Asegúrate de que el eje X esté en modo categórico 
     ),
-    title=dict(x=0.5),  # Centrar el título
-)
-
-# Añadir una anotación para explicar posibles valores ausentes
-fig5.add_annotation(
-    x=0.5, y=-0.15,  # Posición relativa
-    xref='paper', yref='paper',
-    text="Nota: Algunas unidades pueden no estar presentes debido a valores de kilometraje faltantes.",
-    showarrow=False,
-    font=dict(size=12, color="gray")
+    title=dict(x=0.5)  # Centrar el título
 )
 
 
-
+# Mejorar la legibilidad de las etiquetas en el eje X
+fig5.update_xaxes(tickangle=45)
 
 # grafico demo
 fig = px.bar(unidades, x=unidades.index, y=unidades.values, title="Unidades por Tipo")
