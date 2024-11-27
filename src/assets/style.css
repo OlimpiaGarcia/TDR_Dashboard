@@ -117,3 +117,36 @@ body {
     --peach-yellow: #fbe1b0ff;
     --white: #ffffffff;
 }
+
+
+/* dashborad style*/
+.main-page {
+    padding: 20px;
+    /*background-color: #f5f5f5;*/
+    width: 100%;  /* Asegura que la página use todo el ancho disponible */
+}
+
+.main-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;  /* Centra los elementos y los distribuye uniformemente */
+    max-width: 1200px;  /* Ajusta este valor según el ancho deseado de la cuadrícula */
+    margin: auto;  /* Centra la cuadrícula horizontalmente */
+}
+
+.dashboard-image {
+    width: 48%;  /* Cada imagen usa cerca del 50% del ancho del contenedor para ajustar 2 por línea */
+    margin-bottom: 20px;  /* Espaciado entre las filas */
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);  /* Opcional: Añade sombra para mejor estética */
+    border-radius: 10px;  /* Bordes redondeados */
+}
+
+.dashboard-image img {
+    width: 100%;  /* Asegura que la imagen ocupe todo el ancho del enlace */
+    height: auto;  /* Mantiene la proporción de la imagen */
+}
+
+.dashboard-image div { /* Estilos para el título debajo de cada imagen */
+    text-align: center;
+    padding: 10px;
+}
