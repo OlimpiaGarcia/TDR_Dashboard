@@ -28,7 +28,7 @@ main_page = html.Div(
                         html.Div("Costos", style={'textAlign': 'center', 'padding': '10px'})
                     ]),
                     className="dashboard-image"
-                ),
+                ),     
                 dcc.Link(
                     href="/metricas",
                     children=html.Div([
