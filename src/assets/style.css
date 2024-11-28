@@ -13,6 +13,16 @@ body {
     padding: 0.625rem;
 }
 
+.long_graph{
+    border: 0.125rem solid black; 
+    margin: 1%;
+    height: auto; 
+    width: 70%;
+    border-radius: 0.625rem;
+    padding: 0.625rem;
+}
+
+
 .text{
     border: 1px solid black;
     margin: 10px;

@@ -147,6 +147,7 @@ fig5.update_layout(
     xaxis_title='Job Code',
     yaxis_title='Costo Total',
     title_x=0.5
+
 )
 
 
@@ -179,9 +180,9 @@ costos_page = html.Div(
         ], style={'display': 'flex', 'justify-content': 'space-around', 'margin': '10px 0'}),
 
         html.Div([
-            # Primer fila de boxes
-            html.Div(className="graph", children=[
-                dcc.Graph(id='graph6', figure=fig5)
+            # tercra fila de boxes
+            html.Div(className="long_graph", children=[
+                dcc.Graph(id='graph5', figure=fig5)
             ]),
             
         ], style={'display': 'flex', 'justify-content': 'space-around', 'margin': '10px 0'}),
