@@ -30,17 +30,6 @@ main_page = html.Div(
                     className="dashboard-image"
                 ),
                 dcc.Link(
-                    href="/insights",
-                    children=html.Div([
-                        html.Img(
-                            src="/assets/images/insights.jpg",
-                            style={'width': '100%', 'height': 'auto'}
-                        ),
-                        html.Div("Insights", style={'textAlign': 'center', 'padding': '10px'})
-                    ]),
-                    className="dashboard-image"
-                ),
-                dcc.Link(
                     href="/metricas",
                     children=html.Div([
                         html.Img(
@@ -48,6 +37,17 @@ main_page = html.Div(
                             style={'width': '100%', 'height': 'auto'}
                         ),
                         html.Div("Métricas", style={'textAlign': 'center', 'padding': '10px'})
+                    ]),
+                    className="dashboard-image"
+                ),
+                dcc.Link(
+                    href="/insights",
+                    children=html.Div([
+                        html.Img(
+                            src="/assets/images/insights.jpg",
+                            style={'width': '100%', 'height': 'auto'}
+                        ),
+                        html.Div("Insights", style={'textAlign': 'center', 'padding': '10px'})
                     ]),
                     className="dashboard-image"
                 )

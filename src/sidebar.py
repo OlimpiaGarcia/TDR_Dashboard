@@ -23,9 +23,9 @@ sidebar = html.Div(
         html.Hr(),
         dcc.Link("Costos", href="/costos", className="sidebar-link"),
         html.Hr(),
-        dcc.Link("Insights", href="/insights", className="sidebar-link"),
-        html.Hr(),
         dcc.Link("Métricas", href="/metricas", className="sidebar-link"),
+        html.Hr(),
+        dcc.Link("Insights", href="/insights", className="sidebar-link"),
     ],
     className="sidebar",
 )
