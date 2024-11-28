@@ -68,9 +68,10 @@ metricas_page = html.Div(
                             style_data_conditional=[
                                 {'if': {'row_index': 'odd'}, 'backgroundColor': 'rgb(248, 248, 248)'},
                                 {'if': {'row_index': 'even'}, 'backgroundColor': 'white'}
-                            ]
+                            ],
+                            style_table={'width': '350px', 'height': '400px'},  # Tamaño consistente
                         )
-                    ]
+                    ], style={'textAlign': 'center'}  # Centrar todo el bloque
                 ),
                 html.Div(
                     [
@@ -80,7 +81,7 @@ metricas_page = html.Div(
                                {"name": "Estadística", "id": "Estadística"},
                                 {"name": "Valor", "id": "Valor"}
                             ],
-                            data=mttr,
+                            data=mtbf,
                             style_cell={'textAlign': 'center'},
                             style_header={
                                 'backgroundColor': '#fbe1b0ff',
@@ -89,9 +90,10 @@ metricas_page = html.Div(
                             style_data_conditional=[
                                 {'if': {'row_index': 'odd'}, 'backgroundColor': 'rgb(248, 248, 248)'},
                                 {'if': {'row_index': 'even'}, 'backgroundColor': 'white'}
-                            ]
+                            ],
+                            style_table={'width': '350px', 'height': '400px'},  # Tamaño consistente
                         )
-                    ]
+                    ], style={'textAlign': 'center'}  # Centrar todo el bloque
                 ),
                 html.Div(
                     [
@@ -110,9 +112,10 @@ metricas_page = html.Div(
                             style_data_conditional=[
                                 {'if': {'row_index': 'odd'}, 'backgroundColor': 'rgb(248, 248, 248)'},
                                 {'if': {'row_index': 'even'}, 'backgroundColor': 'white'}
-                            ]
+                            ],
+                            style_table={'width': '350px', 'height': '400px'},  # Tamaño consistente
                         )
-                    ]
+                    ], style={'textAlign': 'center'}  # Centrar todo el bloque
                 ),
 
             ],
@@ -139,9 +142,10 @@ metricas_page = html.Div(
                             style_data_conditional=[
                                 {'if': {'row_index': 'odd'}, 'backgroundColor': 'rgb(248, 248, 248)'},
                                 {'if': {'row_index': 'even'}, 'backgroundColor': 'white'}
-                            ]
+                            ],
+                            style_table={'width': '350px', 'height': '400px'},  # Tamaño consistente
                         )
-                    ]
+                    ], style={'textAlign': 'center'}  # Centrar todo el bloque
                 ),
                 html.Div(
                     [
@@ -160,9 +164,10 @@ metricas_page = html.Div(
                             style_data_conditional=[
                                 {'if': {'row_index': 'odd'}, 'backgroundColor': 'rgb(248, 248, 248)'},
                                 {'if': {'row_index': 'even'}, 'backgroundColor': 'white'}
-                            ]
+                            ],
+                            style_table={'width': '350px', 'height': '400px'},  # Tamaño consistente
                         )
-                    ]
+                    ], style={'textAlign': 'center'}  # Centrar todo el bloque
                 ),
             ],
             style={'display': 'flex', 'justify-content': 'space-around', 'margin': '1px 0'}
