@@ -82,10 +82,15 @@ top_units_kilometraje = top_units_kilometraje.dropna()
 fig_pie = px.pie(unidades, names=unidades.index, values=unidades.values)
 
 # Ajustando el color de fondo del gráfico y del área de trazado
-fig_pie.update_layout({
-    'paper_bgcolor': '#f3e8ff',  # Color de fondo de la zona del gráfico (donde no hay datos)
-    'plot_bgcolor': '#f3e8ff'  # Color de fondo de la zona de trazado (donde están los datos)
-})
+fig_pie.update_layout(
+    {'paper_bgcolor': '#f3e8ff',  # Color de fondo de la zona del gráfico (donde no hay datos)
+    'plot_bgcolor': '#f3e8ff'},  # Color de fondo de la zona de trazado (donde están los datos)
+    legend=dict(
+        font=dict(size=16),  # Tamaño de la fuente de la leyenda
+        yanchor="middle",  # Ajusta la posición vertical
+        xanchor="left"  # Ajusta la posición horizontal
+    )
+)
 
 
 #    Grafico 2 ''Distribution of Maintenance Types across Job Codes'
@@ -96,7 +101,7 @@ fig2 = px.bar(
     x='jobcode', 
     y='Count', 
     color='TipoM', 
-    title='Distribution of Maintenance Types across Job Codes',
+    title='Distribución de los Tipos de Mantenimiento en los diferentes Job Codes',
     labels={'Count': 'Count of Maintenance Types'}
 )
 
@@ -129,19 +134,21 @@ fig3.update_layout(
     legend_title='Job Code',
     xaxis=dict(
         tickmode='array',
-        tickvals=[1821, 1769, 1732, 1878, 1850, 1829, 1745, 1855, 1825, 1887, 1869, 1865, 1849, 1828, 1879 ],  # Valores específicos donde quieres ticks
-        ticktext=['1821', '1769', '1732', '1878', '1850', '1829', '1745', '1855', '1825','1887', '1869', '1865', '1849', '1828', '1879'],  # Texto específico para cada tick
+        tickvals=[1821, 1769, 1732, 1878, 1850, 1829, 1745, 1855, 1825, 1887, 1869, 1865, 1849, 1828, 1879],  # Valores específicos donde quieres ticks
+        ticktext=['1821', '1769', '1732', '1878', '1850', '1829', '1745', '1855', '1825', '1887', '1869', '1865', '1849', '1828', '1879'],  # Texto específico para cada tick
         type='category'  # Asegúrate de que el eje X esté en modo categórico
     ),
     legend=dict(
-        yanchor="top",
-        y=1.20,
-        xanchor="right",
-        x=1.05
+        yanchor="top",  # Posición vertical
+        y=1,          # Ajusta la posición vertical (0 es parte inferior, 1 es parte superior)
+        xanchor="right",# Posición horizontal
+        x=2          # Ajusta la posición horizontal para mover la leyenda fuera del gráfico
     )
 )
+
 # Mejorar la legibilidad de las etiquetas en el eje X
 fig3.update_xaxes(tickangle=45)
+
 
 
 #   Gragfico 4 ''Top 5 Job Codes for the Top 15 Units'
@@ -167,7 +174,12 @@ fig4.update_layout(
         ticktext=['1821', '1769', '1732', '1878', '1850', '1829', '1745', '1855', '1825','1887', '1869', '1865', '1849', '1828', '1879'],  # Texto específico para cada tick
         type='category'  # Asegúrate de que el eje X esté en modo categórico
     ),
-    legend=dict(yanchor="top", y=1.20, xanchor="right", x=1)
+    legend=dict(
+        yanchor="top",  # Posición vertical
+        y=1,          # Ajusta la posición vertical (0 es parte inferior, 1 es parte superior)
+        xanchor="right",# Posición horizontal
+        x=2          # Ajusta la posición horizontal para mover la leyenda fuera del gráfico
+    )
 )
 
 # Mejorar la legibilidad de las etiquetas en el eje X
@@ -221,16 +233,15 @@ estadisticas_page = html.Div([
                 figure=fig_pie 
             )
         ], style={
-            'border': '2px solid black', 
-            'margin': '10px', 
+            'border': '0.125rem solid black', 
+            'margin': '0.625rem', 
             'height': 'auto', 
             'width': '70%',  # Asegura que el gráfico ocupe la mayor parte del contenedor
-            'padding': '2%',  # Añade padding para que el gráfico no toque los bordes
             'background-color': '#f3e8ff',  # Fondo 
-            'border-radius': '10px'  # Bordes redondeados
+            'border-radius': '0.625rem'  # Bordes redondeados
         }),
         
-    ], style={'display': 'flex', 'justify-content': 'center', 'padding': '10px',  'border-radius': '10px'}),  # Contenedor principal con fondo claro y bordes redondeados
+    ], style={'display': 'flex', 'justify-content': 'center',  'border-radius': '0.625rem'}),  # Contenedor principal con fondo claro y bordes redondeados
         
     html.Div([
         # Primer fila de boxes
@@ -241,7 +252,7 @@ estadisticas_page = html.Div([
         html.Div(className="graph", children=[
             dcc.Graph(id='graph3', figure=fig3)  
         ]),
-    ], style={'display': 'flex', 'justify-content': 'space-around', 'margin': '10px 0'}),
+    ], style={'display': 'flex', 'flex-wrap': 'wrap', 'justify-content': 'space-around', 'margin': '1%'}),
 
     html.Div([
         # Segunda fila de boxes
@@ -251,7 +262,7 @@ estadisticas_page = html.Div([
         html.Div(className="graph", children=[
             dcc.Graph(id='graph5', figure=fig5)  
         ]),
-    ], style={'display': 'flex', 'justify-content': 'space-around', 'margin': '10px 0'}),
+    ], style={'display': 'flex', 'flex-wrap': 'wrap', 'justify-content': 'space-around', 'margin': '1%'}),
     
-], style={'padding': '10px'})
+], style={'padding': '1%'})
 

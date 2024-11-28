@@ -5,12 +5,12 @@ body {
 }
 
 .graph{
-    border: 2px solid black; 
-    margin: 10px;
+    border: 0.125rem solid black; 
+    margin: 1%;
     height: auto; 
     width: auto;
-    border-radius: 10px;
-    padding: 2%;
+    border-radius: 0.625rem;
+    padding: 0.625rem;
 }
 
 .text{
@@ -78,6 +78,7 @@ body {
     font-size: 18px;
     font-weight: bold;
 }
+
 
 /* Barra superior */
 .topbar {
