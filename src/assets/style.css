@@ -24,12 +24,13 @@ body {
 
 
 .text{
-    border: 1px solid black;
+    font-family: Arial, sans-serif;
+    font-size: 1.5rem;
     margin: 10px;
     height: auto; 
     width: auto;
     border-radius: 10px;
-    padding: 2%;
+    padding: 5%;
 }
 
 

@@ -1,6 +1,7 @@
-from imports import sm
+from imports import sm,  pd, np
 import pandas as pd
 import numpy as np
+from statsmodels.tsa.arima.model import ARIMA
 
 
 # Cargamos los datos
@@ -155,3 +156,6 @@ y_subtotal_cost_multiple = clean_data_subtotal['SUBTOTAL']
 
 # Perform the multiple linear regression
 model_multiple = sm.OLS(y_subtotal_cost_multiple, X_multiple).fit()
+
+
+
