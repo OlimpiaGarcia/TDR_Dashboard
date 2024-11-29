@@ -167,7 +167,7 @@ costos_page = html.Div(
         html.Div(className="graph", children=[
             dcc.Graph(id='graph2', figure=fig2)  
         ]),
-        ], style={'display': 'flex', 'justify-content': 'space-around', 'margin': '10px 0'}),
+        ], style={'display': 'flex', 'flex-wrap': 'wrap', 'justify-content': 'space-around', 'margin': '1%'}),
 
         html.Div([
             # Segunda fila de boxes
@@ -177,7 +177,7 @@ costos_page = html.Div(
             html.Div(className="graph", children=[
                 dcc.Graph(id='graph4', figure=fig4)  
             ]),
-        ], style={'display': 'flex', 'justify-content': 'space-around', 'margin': '10px 0'}),
+        ], style={'display': 'flex', 'flex-wrap': 'wrap', 'justify-content': 'space-around', 'margin': '1%'}),
 
         html.Div([
             # tercra fila de boxes
@@ -185,7 +185,7 @@ costos_page = html.Div(
                 dcc.Graph(id='graph5', figure=fig5)
             ]),
             
-        ], style={'display': 'flex', 'justify-content': 'space-around', 'margin': '10px 0'}),
+        ], style={'display': 'flex', 'flex-wrap': 'wrap', 'justify-content': 'space-around', 'margin': '1%'}),
 
     ]
 )

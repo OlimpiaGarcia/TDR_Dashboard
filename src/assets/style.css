@@ -103,7 +103,7 @@ body {
     font-family: Arial, sans-serif; /* Fuente */
     position: absolute; /* Fija la barra en la parte superior */
     top: 0; /* Sin margen superior */
-    width: 80%; /* Ocupa todo el ancho de la ventana */
+    width: 75%; /* Ocupa todo el ancho de la ventana */
 
 }
 
@@ -116,8 +116,8 @@ body {
 
 /* Estilo del texto a la derecha */
 .topbar-right {
-    font-size: 16px;
-    font-weight: normal;
+    font-size: 20px;
+    font-weight: bold;
     color: #555; /* Color del texto */
 }
 
